@@ -1,0 +1,290 @@
+/* Application Template
+ * -----------------------------------------------------------------------------
+ * Styling for the structure of the site. If your element doesn't show up on
+ * every page, it probably shouldn't be in this file.
+ * -----------------------------------------------------------------------------*/
+
+/* Things to place in separate files...
+ * ---------------------------------------------------------------------------
+ * /extends/            => Sass extends declarations
+ * /mixins/             => Sass mixins declarations
+ * _buttons.scss
+ * _fonts.scss          => Font imports
+ * _forms.scss
+ * _lists.scss
+ * _library.scss        => Custom classes used throughout the app.
+ * _tables.scss
+ * _typography.scss
+ * _utilities.scss
+ * _variables.scss
+ * _component_name.scss => Styles for a component of functionality (e.g. – modal).
+ * _page_name.scss      => Styles for page specific elements.
+ * ---------------------------------------------------------------------------
+ */
+ 
+@import url("//fnt.webink.com/wfs/webink.css/?project=FE95A39D-CC89-4BCF-9725-E78579560E7F&fonts=8434466A-23DD-9CCA-882C-32A07E66E747:f=YeaIta,7B3812DA-4DA8-9D05-72E2-DE755A973015:f=Yea");
+
+* { box-sizing: border-box; -webkit-font-smoothing:antialiased; }
+*:hover { @include transition(all ease 1s); } 
+
+body { 
+	background:#fff;
+	font-family:'Yea', Times, serif;
+	font-size:16px;
+	line-height:24px;
+}
+#huh { 
+	position:relative; 
+	display:block; 
+	height:100%;
+	width:100%;padding-top:50px;
+	@include transition(all ease 0.3s);
+}
+#wrap {
+	position:absolute;
+	display:block;
+	width:180px;
+	height:50px;
+	@include transform(scale(0.4));
+	left:0px;
+} 
+p { 
+	margin:0; 
+	margin-bottom:10px;
+}
+.hide {
+	opacity:0;
+}
+i {
+	font-style:normal;
+	font-family:'YeaIta', serif;
+}
+
+#letterA {
+  .counter { 
+    display:block; 
+    width:40px; 
+    height:40px; 
+    background:transparent; 
+    border:10px solid #000; 
+    border-radius:20px; 
+    position: absolute; 
+    @include transform-origin(top left);
+    &.on { 
+    	@include animation(eye1 5s ease infinite running);
+    } 
+    &.the { 
+    	@include animation(circle1 5s ease infinite running);
+    } 
+    &.ball { 
+    	@include animation(wheel1 5s ease infinite running);
+    } 
+  }
+  .stroke { 
+    display: block; 
+    width: 10px;
+    height: 40px; 
+    position: absolute; 
+    background: #000; 
+    left: 30px; 
+    &.on { 
+    	@include animation(nose1 5s ease infinite running); 
+    } 
+    &.the { 
+    	@include animation(arrow1 5s ease infinite running); 
+    } 
+    &.ball {
+    	@include animation(boot 5s ease infinite running); 
+    }  
+  }
+}
+
+
+#dash { 
+	display: block;
+	width: 28px;
+	height: 11px;
+	position: absolute;
+	@include transform-origin(center center);
+	background:#000;
+	left: 45px;
+	top: 14px; 
+	&.on {
+		@include animation(nose2 5s ease infinite running); 
+	} 
+	&.the {
+		@include animation(arrow2 5s ease infinite running); 
+	} 
+	&.ball {
+		@include animation(spoiler 5s ease infinite running); 
+	} 
+}
+#letterO {
+	.counter { 
+  	display: block;
+  	width: 40px;
+  	height: 40px;
+  	background: transparent;
+  	border: 10px solid #000;
+  	border-radius: 30px;
+  	position: absolute;
+  	left: 78px; 
+    &.on { 
+    	@include animation(eye2 5s ease infinite running);
+    } 
+    &.the { 
+    	@include animation(circle2 5s ease infinite running, border-animation 5s ease infinite);
+    } 
+    &.ball { 
+    	@include animation(wheel2 5s ease infinite running);
+    } 
+    @include transform-origin(bottom);
+  } 
+}
+#letterK {
+  .stroke { 
+    display: block; 
+    width: 10px;
+    height: 57px; 
+    position: absolute; 
+    background: #000; 
+    left: 123px; 
+    margin-top: -17px; 
+    &.on{ 
+      @include animation(mouth1 5s ease infinite running);
+    } 
+    &.the { 
+      @include animation(arrow3 5s ease infinite running);
+    } 
+    &.ball { 
+      @include animation(chasis 5s ease infinite running);
+    } 
+  }
+  .arm { 
+    display: block; 
+    width: 12px;
+    height: 19px; 
+    background: #000; 
+    left: 148px; 
+    position: absolute;
+    @include transform(skewX(-40deg)); 
+    &.on{ 
+      @include animation(mouth2 5s ease infinite running);
+    } 
+    &.the{ 
+      @include animation(feather1 5s ease infinite running);
+    } 
+    &.ball { 
+      @include animation(window1 5s ease infinite running);
+    }
+    @include transform-origin(top right);
+  }
+  .leg { 
+    display: block; 
+    width: 12px; 
+    height: 21px; 
+    background: #000; 
+    left: 150px; 
+    position: absolute; 
+    @include transform(skewX(40deg)); 
+    margin-top:19px;
+    &.on { 
+    	@include animation(mouth3 5s ease infinite running); 
+    } 
+    &.the { 
+    	@include animation(feather2 5s ease infinite running); 
+    } 
+    &.ball { 
+    	@include animation(window2 5s ease infinite running); 
+    } 
+    @include transform-origin(bottom right); 
+  }
+}
+
+#info { 
+  position: absolute; 
+  width:380px; 
+  left:55px; margin-top:80px; 
+  color:#666;
+  a { 
+    font-family:'Yea', serif; 
+    text-decoration:none; 
+    color:#666; 
+    @include transition(all ease 0.3s); 
+  }
+  a:hover {
+    color:lighten(red, 30%);
+  }
+}
+
+@mixin animate($name, $trans1, $trans2) {
+    @include keyframes($name) {
+      0% { @include transform($trans1); }
+      100% { @include transform($trans2); }
+    }
+}
+
+@mixin three( $name, $trans1, $trans2, $trans3 ) {
+   @include keyframes($name) {
+      0% { @include transform($trans1); }
+      50% { @include transform($trans2); }
+      100% { @include transform($trans3); }
+   }
+}
+
+@mixin five( $name, $trans1, $trans2, $trans3, $trans4, $trans5 ) {
+   @include keyframes($name) {
+      0% { @include transform($trans1); }
+      25% { @include transform($trans2); }
+      50% { @include transform($trans3); } 
+      75% { @include transform($trans4); }
+      100% { @include transform($trans5); }
+   }
+}
+
+@mixin six( $name, $trans1, $trans2, $trans3, $trans4, $trans5, $trans6 ) {
+   @include keyframes($name) {
+      0% { @include transform($trans1); }
+      20% { @include transform($trans2); }
+      40% { @include transform($trans3); } 
+      60% { @include transform($trans4); }
+      80% { @include transform($trans5); }
+      100% { @include transform($trans6); }
+   }
+}
+
+@include keyframes(border-animation) {
+  0% { border-width: 10px; }
+  50% { border-width: 5px; }
+  100% { border-width: 10px; }
+}
+
+@include three(eye1, translate(0px, 0px), translate(0px, -30px), translate(0px, 0px));
+@include three(eye2, translate(0px, 0px), translate(20px, -30px), translate(0px, 0px));
+@include three(nose1, translate(0px, 0px), translate(35px, -30px) rotate(180deg), translate(0px, 0px));
+@include three(nose2, translate(0px, 0px), translate(10px, -5px) rotate(180deg), translate(0px, 0px));
+@include three(mouth1, translate(0px, 0px), translate(-57px, 35px) rotate(90deg), translate(0px, 0px));
+@include three(mouth2, translate(0px, 0px) skewX(-40deg), translate(-72px, 50px) rotate(180deg) skewX(-40deg), translate(0px, 0px) skewX(-40deg));
+@include three(mouth3, translate(0px, 0px) skewX(40deg), translate(-142px, -10px) rotate(180deg) skewX(40deg), translate(0px, 0px) skewX(40deg));
+
+@include three(circle1, translate(0px, 0px), translate(23px, 0px), translate(0px, 0px));
+@include three(circle2, translate(0px, 0px), translate(-55px, 30px) scale(2.5), translate(0px, 0px));
+@include three(arrow1, translate(0px, 0px), translate(30px, -1px) rotate(90deg), translate(0px, 0px));
+@include three(arrow2, translate(0px, 0px), translate(0px, 0px) rotate(180deg), translate(0px, 0px));
+@include three(arrow3, translate(0px, 0px), translate(-15px, 5px) rotate(90deg), translate(0px, 0px));
+@include three(feather1, translate(0px, 0px) skewX(-40deg), rotate(360deg) skewX(-40deg), translate(0px, 0px) skewX(-40deg));
+@include three(feather2, translate(0px, 0px) skewX(40deg), rotate(-360deg) skewX(40deg), translate(0px, 0px) skewX(40deg));
+
+@include three(wheel1, translate(0px, 0px), translate(0px, 0px), translate(0px, 0px));
+@include three(wheel2, translate(0px, 0px), translate(20px, 0px), translate(0px, 0px));
+@include three(boot, translate(0px, 0px), translate(-25px, -34px) rotate(75deg), translate(0px, 0px));
+@include three(spoiler, translate(0px, 0px), translate(65px, -40px) rotate(-20deg), translate(0px, 0px));
+@include three(chasis, translate(0px, 0px), translate(-60px, -45px) rotate(-90deg), translate(0px, 0px));
+@include three(window1, translate(0px, 0px) skewX(-40deg), translate(-110px, -35px) skewX(-40deg), translate(0px, 0px) skewX(-40deg));
+@include three(window2, translate(0px, 0px) skewX(40deg), translate(-45px, -55px) skewX(40deg), translate(0px, 0px) skewX(40deg));
+
+@include three(counter, rotate(0deg), rotate(-360deg), rotate(0deg));
+@include six(dash, translate(0px, 0px), translate(0px, -40px) rotate(90deg), translate(40px, 0px) rotate(180deg), translate(0px, 40px) rotate(270deg), translate(-40px, 0px) rotate(360deg), translate(0px, 0px));
+@include six(swing, translate(0px, 0px), translate(0px, 10px) rotate(30deg), translate(0px, 0px), translate(0px, 0px), translate(0px, 0px), translate(0px, 0px));
+@include animate(skewClock, rotate(0deg) skewX(-40deg), rotate(360deg) skewX(-40deg));
+@include animate(skewCounter, rotate(0deg) skewX(40deg), rotate(360deg) skewX(40deg));
